@@ -1,27 +1,100 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import cx from "classnames";
-import { Purifier, Softener, Twitter, Upgraded } from "./svg";
-import { inView, motion, useAnimation } from "framer-motion";
+import { MenuSvg, Purifier, Softener, Twitter, Upgraded } from "./svg";
+import { motion, useAnimation } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
 
 type Tabs = "home" | "services" | "projects" | "team" | "contact";
 
-const Menu = (props: { onChangeTab: (tab: Tabs) => void; tab: Tabs }) => {
+const Menu = (props: {
+  onChangeTab: (tab: Tabs) => void;
+  tab: Tabs;
+  isMobile?: boolean;
+}) => {
   const { onChangeTab, tab } = props;
 
   const [showMenu, setShowMenu] = useState(true);
 
+  const [collapse, setCollapse] = useState(true);
+
   useEffect(() => {
-    window.addEventListener("wheel", (e) => {
-      if (e.deltaY > 0 || window.screenY === 0) {
-        setShowMenu(false);
-      } else if (e.deltaY < 0 && window.scrollY > 0) {
-        setShowMenu(true);
-      }
-    });
-  }, []);
+    if (!props.isMobile) {
+      window.addEventListener("wheel", (e) => {
+        if (e.deltaY > 0) {
+          setShowMenu(false);
+        } else if (e.deltaY < 0 && window.scrollY >= 0) {
+          setShowMenu(true);
+        }
+      });
+    }
+  }, [props.isMobile]);
+
+  if (props.isMobile) {
+    return (
+      <div className={cx("menu", "visible")}>
+        {!collapse && (
+          <div onClick={() => setCollapse(true)} className="gesture-detector" />
+        )}
+        <img alt="" src="/logo.png" />
+        <div className="menu-btn" onClick={() => setCollapse(!collapse)}>
+          <MenuSvg />
+        </div>
+        <div
+          className={cx("menu-dropdown", collapse ? "dropend" : "dropstart")}
+        >
+          <div
+            onClick={() => onChangeTab("home")}
+            style={{ marginLeft: "auto" }}
+            className={cx(
+              "menu-tab",
+              tab === "home" ? "tab-active" : undefined
+            )}
+          >
+            Home
+          </div>
+          <div
+            onClick={() => onChangeTab("services")}
+            className={cx(
+              "menu-tab",
+              tab === "services" ? "tab-active" : undefined
+            )}
+          >
+            Services
+          </div>
+          <div
+            onClick={() => onChangeTab("projects")}
+            className={cx(
+              "menu-tab",
+              tab === "projects" ? "tab-active" : undefined
+            )}
+          >
+            Projects
+          </div>
+          <div
+            onClick={() => onChangeTab("team")}
+            className={cx(
+              "menu-tab",
+              tab === "team" ? "tab-active" : undefined
+            )}
+          >
+            Our Team
+          </div>
+          <div
+            onClick={() => onChangeTab("contact")}
+            style={{ marginRight: "10%" }}
+            className={cx(
+              "menu-tab",
+              tab === "contact" ? "tab-active" : undefined
+            )}
+          >
+            Contact Us
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={cx("menu", showMenu ? "visible" : "null")}>
@@ -68,7 +141,7 @@ const Menu = (props: { onChangeTab: (tab: Tabs) => void; tab: Tabs }) => {
   );
 };
 
-const Home = (props: { setTab: (tab: Tabs) => void }) => {
+const Home = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   const { setTab } = props;
   const [ref, inView] = useInView();
 
@@ -77,6 +150,59 @@ const Home = (props: { setTab: (tab: Tabs) => void }) => {
       setTab("home");
     }
   }, [inView]);
+
+  if (props.isMobile) {
+    return (
+      <div ref={ref} id="home" className="home">
+        <motion.img
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            width: "100%",
+            height: "100vh",
+            position: "absolute",
+            objectFit: "cover",
+            left: 0,
+            zIndex: 0,
+            top: 0,
+          }}
+          alt=""
+          src="/bg.png"
+        />
+        <div
+          className="grayfilter"
+          style={{ width: "100%", height: "100vh" }}
+        ></div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="home-main"
+        >
+          <div className="main-title">BUILD THE FUTURE OF</div>
+          <div className="main-title">LOS ANGELES</div>
+          <div className="main-desc" style={{ marginTop: "15px" }}>
+            Welcome to 40plus home improvement
+          </div>
+          <div className="main-desc">
+            LA's Premier Residential & Commercial services
+          </div>
+          <div
+            className="learn-btn"
+            onClick={() =>
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth", block: "nearest" })
+            }
+          >
+            Learn More
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <div ref={ref} id="home" className="home">
       <motion.img
@@ -125,7 +251,8 @@ const Home = (props: { setTab: (tab: Tabs) => void }) => {
   );
 };
 
-const About = () => {
+const About = (props: { isMobile?: boolean }) => {
+  const { isMobile } = props;
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -134,6 +261,63 @@ const About = () => {
       controls.start("visible");
     }
   }, [controls, inView]);
+
+  if (isMobile) {
+    return (
+      <div id="about" ref={ref} className="about">
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+            hidden: { opacity: 0, y: -50 },
+          }}
+          className="about-left"
+        >
+          <div className="about-title">ABOUT 40PLUS</div>
+          <div className="about-desc">
+            Welcome to 40plus home improvement group. LA's Premier Residential &
+            Commercial services.
+          </div>
+          <div className="about-desc">
+            40plus home improvement group is one of LA's most popular premium
+            general building contractors and HVAC systems contractors.
+          </div>
+          <div className="about-desc">
+            Clients trust our expertise in residential and commercial
+            construction,renovation ,installation and other projects repair
+            services .
+          </div>
+          <div className="about-desc">
+            40plus home improvement performs quality work on a tight budget and
+            works tirelessly to hit deadlines every time.
+          </div>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5, delay: 0.5 },
+            },
+            hidden: { opacity: 0, y: -50 },
+          }}
+          className="about-right"
+        >
+          <img
+            style={{ width: "100%", borderRadius: "8px" }}
+            alt=""
+            src="/about1.png"
+          />
+          <div className="about-bg-desc">
+            LOS ANGELES <br /> BUILDERS
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div id="about" ref={ref} className="about">
@@ -191,8 +375,11 @@ const About = () => {
   );
 };
 
-const Services = (props: { setTab: (tab: Tabs) => void }) => {
-  const { setTab } = props;
+const Services = (props: {
+  setTab: (tab: Tabs) => void;
+  isMobile?: boolean;
+}) => {
+  const { setTab, isMobile } = props;
   const services = [
     "ADU\n(ACCESSORY DWELLING UNITS)",
     "Commercial tenant improvements",
@@ -307,7 +494,7 @@ const Services = (props: { setTab: (tab: Tabs) => void }) => {
   );
 };
 
-const Provide = () => {
+const Provide = (props: { isMobile?: boolean }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -387,14 +574,16 @@ const Provide = () => {
   );
 };
 
-const Team = (props: { setTab: (tab: Tabs) => void }) => {
+const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   const { setTab } = props;
 
+  const controls = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
       setTab("team");
+      controls.start("visible");
     }
   }, [inView]);
   const [members, setMembers] = useState([
@@ -426,8 +615,34 @@ const Team = (props: { setTab: (tab: Tabs) => void }) => {
 
   return (
     <div ref={ref} id="team" className="team">
-      <div className="service-title">OUR TEAM</div>
-      <div className="magic-panel">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, delay: 0 },
+          },
+          hidden: { opacity: 0, y: -50 },
+        }}
+        className="service-title"
+      >
+        OUR TEAM
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, delay: 0.5 },
+          },
+          hidden: { opacity: 0, y: -50 },
+        }}
+        className="magic-panel"
+      >
         <div
           className={cx("member", "member1")}
           // onMouseLeave={() => {
@@ -485,12 +700,15 @@ const Team = (props: { setTab: (tab: Tabs) => void }) => {
           <div className="member-role">{members[2].role}</div>
           <div className="member-desc">{members[2].desc}</div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-const Contact = (props: { setTab: (tab: Tabs) => void }) => {
+const Contact = (props: {
+  setTab: (tab: Tabs) => void;
+  isMobile?: boolean;
+}) => {
   const { setTab } = props;
 
   const [ref, inView] = useInView();
@@ -557,7 +775,10 @@ const Contact = (props: { setTab: (tab: Tabs) => void }) => {
   );
 };
 
-const Project = (props: { setTab: (tab: Tabs) => void }) => {
+const Project = (props: {
+  setTab: (tab: Tabs) => void;
+  isMobile?: boolean;
+}) => {
   const { setTab } = props;
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -635,8 +856,36 @@ const Footer = () => {
   );
 };
 
+function isMobileUserAgent() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
+function isMobileScreenWidth() {
+  return window.innerWidth <= 768;
+}
+
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints;
+}
+
+function isMobileDevice() {
+  return isMobileUserAgent() || isMobileScreenWidth() || isTouchDevice();
+}
+
 function App() {
   const [tab, setTab] = useState<Tabs>("home");
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    setIsMobile(Boolean(isMobileDevice()));
+  }, []);
 
   return (
     <div className="App">
@@ -647,26 +896,27 @@ function App() {
             .getElementById(tab)
             ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }}
+        isMobile={isMobile}
         tab={tab}
       />
-      <Home setTab={setTab} />
+      <Home isMobile={isMobile} setTab={setTab} />
       <div style={{ height: "20px" }} />
-      <About />
+      <About isMobile={isMobile} />
 
       <div style={{ height: "20px" }} />
-      <Services setTab={setTab} />
+      <Services isMobile={isMobile} setTab={setTab} />
 
       <div style={{ height: "20px" }} />
-      <Provide />
+      <Provide isMobile={isMobile} />
 
       <div style={{ height: "20px" }} />
-      <Project setTab={setTab} />
+      <Project isMobile={isMobile} setTab={setTab} />
 
       <div style={{ height: "20px" }} />
-      <Team setTab={setTab} />
+      <Team isMobile={isMobile} setTab={setTab} />
 
       <div style={{ height: "20px" }} />
-      <Contact setTab={setTab} />
+      <Contact isMobile={isMobile} setTab={setTab} />
 
       <div style={{ height: "20px" }} />
       <Footer />
