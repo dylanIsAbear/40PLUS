@@ -4,6 +4,8 @@ import cx from "classnames";
 import { MenuSvg, Purifier, Softener, Twitter, Upgraded } from "./svg";
 import { motion, useAnimation } from "framer-motion";
 
+import { useForm, ValidationError } from "@formspree/react";
+
 import { useInView } from "react-intersection-observer";
 
 type Tabs = "home" | "services" | "projects" | "team" | "contact";
@@ -497,6 +499,7 @@ const Services = (props: {
 const Provide = (props: { isMobile?: boolean }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { isMobile } = props;
 
   useEffect(() => {
     if (inView) {
@@ -535,20 +538,29 @@ const Provide = (props: { isMobile?: boolean }) => {
         className="flex-3"
         style={{ marginTop: "20px" }}
       >
-        <div style={{ width: "20%" }} className="service-item">
-          <Softener />
+        <div
+          style={{ width: isMobile ? "25%" : "20%" }}
+          className="service-item"
+        >
+          <Softener width="32px" height="32px" />
           <div style={{ marginTop: "15px" }} className="service-desc">
             Water Softener system
           </div>
         </div>
-        <div style={{ width: "20%" }} className="service-item">
-          <Purifier />
+        <div
+          style={{ width: isMobile ? "25%" : "20%" }}
+          className="service-item"
+        >
+          <Purifier width="32px" height="32px" />
           <div style={{ marginTop: "15px" }} className="service-desc">
             Water Purifier system
           </div>
         </div>
-        <div style={{ width: "20%" }} className="service-item">
-          <Upgraded />
+        <div
+          style={{ width: isMobile ? "25%" : "20%" }}
+          className="service-item"
+        >
+          <Upgraded width="32px" height="32px" />
           <div style={{ marginTop: "15px" }} className="service-desc">
             Kitchen Cabinets Upgraded
           </div>
@@ -575,7 +587,7 @@ const Provide = (props: { isMobile?: boolean }) => {
 };
 
 const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
-  const { setTab } = props;
+  const { setTab, isMobile } = props;
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -589,7 +601,7 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   const [members, setMembers] = useState([
     {
       // url: "https://static.cytelab.net/userpublic/64397e38edfde0aacb43c384/preset-cover-10672c7c-dde5-45da-beef-0c971b89d7cd-1705569722185",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Ken%20Tan.jpg',
+      url: "http://s8a186gmj.bkt.gdipper.com/Ken%20Tan.jpg",
       name: "Ken Tan",
       role: "Project Manager",
       desc: "Ken is an experienced professional contractor, he is working on remodeling , renovation, home improvements and ADU, like plumbing, electrical, roofing, drywall, painting, wood flooring,kitchen cabinets, carpentry and structural work.",
@@ -597,25 +609,45 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
     {
       name: "Bob Yao",
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-653f76225fad7442a36d7ca7",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Bob%20Yao.jpg',
+      url: "http://s8a186gmj.bkt.gdipper.com/Bob%20Yao.jpg",
       role: "Head of construction",
       desc: "Bob has 10+ years of operations and management experience, where he has directly managed an extensive variety of construction projects, hiring and negotiating with designers, architects, engineers, subcontractors and vendors.He is working on HVAC unit systems , plumbing, electrical, roofing and other maintenance projects.",
     },
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-656980faf18a16d57605c508-1701414188808",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Cindy%20Sun.jpg',
+      url: "http://s8a186gmj.bkt.gdipper.com/Cindy%20Sun.jpg",
       name: "Cindy Sun",
       role: "Founder and CEO",
       desc: "As CEO, Cindy is a responsible for managing the strategies, direction and operations at 40Plus Home Improvement Group. Cindy is a licensed B General Contractor in California, as wellas in additional states. Cindy started her career in elevator industry, with a focus on the remodeling , and construction industry . She also is a licensed C-20 Heating, Ventilation, and AirConditioning contractor in California. She has Certificate of Mold Remediation and Certificate of Home Inspection. Over the past 6 years, Cindy has personally hired and trained over 50 employees, has accumulated expertise in general construction, renovation and development, and has personally overseen completion on over 500+ projects .",
     },
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Hale%20Li.jpg',
+      url: "http://s8a186gmj.bkt.gdipper.com/Hale%20Li.jpg",
       name: "Hale Li",
       role: "Director of Project Management",
       desc: "Hale has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Hale’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.",
     },
   ]);
+
+  if (isMobile) {
+    return (
+      <div className="mobileteam">
+        <div className="service-title">OUR TEAM</div>
+        {members.map((member) => {
+          return (
+            <div className="m-member">
+              <img alt="" src={member.url} />
+              <div className="member-panel">
+                <div className="member-name">{member.name}</div>
+                <div className="member-role">{member.role}</div>
+                <div className="member-desc">{member.desc}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} id="team" className="team">
@@ -713,7 +745,9 @@ const Contact = (props: {
   setTab: (tab: Tabs) => void;
   isMobile?: boolean;
 }) => {
-  const { setTab } = props;
+  const { setTab, isMobile } = props;
+
+  const [state, handleSubmit] = useForm("xbjngonz");
 
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -721,6 +755,96 @@ const Contact = (props: {
       setTab("contact");
     }
   }, [inView]);
+
+  if (isMobile) {
+    return (
+      <div ref={ref} id="contact" className="contact">
+        <div className="service-title">CONTACT US</div>
+        <div className="contact-part">
+          <div className="contact-title">40Plus Home Improvement</div>
+          <div className="contact-desc">
+            40plus home improvement group is an experienced Los Angeles based
+            general building contractor and HVAC systems contractor, and has
+            extensive resources to ensure projects are delivered on time and
+            within budget expectations.
+          </div>
+          <div className="contact-desc">
+            Our team of seasoned professionals has a proven track executing on
+            functional residential and mixed-use construction retrofitting, and
+            we are confident we can bring tremendous value to your project.{" "}
+            <br />
+            <br />
+            We are thrilled to be considered.
+          </div>
+        </div>
+        <div className="contact-part">
+          <div className="contact-title">Contact Details</div>
+          <div className="contact-detail">Phone: 626-525-1861</div>
+          <div className="contact-detail">
+            Email adress: 40plushomeimprovement@gmail.com
+          </div>
+          <div className="contact-detail">Address: Los Angeles, California</div>
+          <div className="contact-detail">Lisence Number: 1059175</div>
+        </div>
+        <div className="contact-title" style={{ marginTop: "20px" }}>
+          Contact Form
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="inputrow">
+            <input
+              className="contact-input"
+              name="first-name"
+              placeholder="First Name"
+            />
+          </div>
+          <div className="inputrow">
+            <input
+              className="contact-input"
+              name="last-name"
+              placeholder="Last Name"
+            />
+          </div>
+          <div className="inputrow">
+            <input
+              id="email"
+              type="email"
+              name="email"
+              className="contact-input"
+              placeholder="Email Address"
+            />
+            <ValidationError
+              prefix="email"
+              field="email"
+              errors={state.errors}
+            />
+          </div>
+          <div className="inputrow">
+            <input
+              className="contact-input"
+              name="subject"
+              placeholder="Subject"
+            />
+          </div>
+          <div className="inputrow">
+            <textarea
+              id="message"
+              name="message"
+              style={{
+                height: "100px",
+              }}
+              className="contact-input"
+              placeholder="Message"
+            />
+          </div>
+          <button type="submit" className="submit">
+            SUBMIT
+          </button>
+        </form>
+        {state.succeeded && <p>Thanks for contacting us!!</p>}
+      </div>
+    );
+  }
+
   return (
     <div ref={ref} id="contact" className="contact">
       <div className="service-title">CONTACT US</div>
@@ -753,28 +877,61 @@ const Contact = (props: {
           <div className="contact-detail">Lisence Number: 1059175</div>
         </div>
       </div>
-      <div className="contact-title" style={{marginTop: '40px'}}>Contact Form</div>
-      <div className="inputrow">
-        <input className="contact-input" placeholder="First Name" />
-        <input className="contact-input" placeholder="Last Name" />
+      <div className="contact-title" style={{ marginTop: "40px" }}>
+        Contact Form
       </div>
-      <div className="inputrow">
-        <input className="contact-input" placeholder="Email Address" />
-      </div>
-      <div className="inputrow">
-        <input className="contact-input" placeholder="Subject" />
-      </div>
-      <div className="inputrow">
-        <textarea
-          style={{
-            height: "200px",
-            width: "600px",
-          }}
-          className="contact-input"
-          placeholder="Message"
-        />
-      </div>
-      <div className="submit">SUBMIT</div>
+      <form onSubmit={handleSubmit}>
+        <div className="inputrow">
+          <input
+            className="contact-input"
+            name="first-name"
+            placeholder="First Name"
+          />
+        </div>
+        <div className="inputrow">
+          <input
+            className="contact-input"
+            name="last-name"
+            placeholder="Last Name"
+          />{" "}
+        </div>
+        <div className="inputrow">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            className="contact-input"
+            placeholder="Email Address"
+          />
+          <ValidationError prefix="email" field="email" errors={state.errors} />
+        </div>
+        <div className="inputrow">
+          <input
+            className="contact-input"
+            name="subject"
+            placeholder="Subject"
+          />
+        </div>
+        <div className="inputrow">
+          <textarea
+            id="message"
+            name="message"
+            style={{
+              height: "100px",
+            }}
+            className="contact-input"
+            placeholder="Message"
+          />
+        </div>
+        <button
+          style={{ marginLeft: "130px" }}
+          type="submit"
+          className="submit"
+        >
+          {state.submitting ? "sending..." : "SUBMIT"}
+        </button>
+      </form>
+      {state.succeeded && <p>Thanks for contacting us!!</p>}
     </div>
   );
 };
@@ -786,6 +943,7 @@ const Project = (props: {
   const { setTab } = props;
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { isMobile } = props;
 
   useEffect(() => {
     if (inView) {
@@ -793,6 +951,62 @@ const Project = (props: {
       setTab("projects");
     }
   }, [controls, inView]);
+
+  if (isMobile) {
+    return (
+      <div id="projects" className={cx("services", "projects")}>
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1 },
+            },
+            hidden: { opacity: 0, y: -50 },
+          }}
+          className="service-title"
+        >
+          OUR PROJECTS
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.5 },
+            },
+            hidden: { opacity: 0, y: -50 },
+          }}
+          className="project-row"
+        >
+          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/0.1.png" />
+          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/1.png" />
+          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/2.png" />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 1 },
+            },
+            hidden: { opacity: 0, y: -50 },
+          }}
+          className="seeall"
+        >
+          SEE ALL PROJECTS
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <div id="projects" className="services">
       <motion.div
@@ -847,12 +1061,12 @@ const Project = (props: {
   );
 };
 
-const Footer = () => {
+const Footer = (props: { isMobile: boolean }) => {
   return (
     <div className="footer">
       <div className="ft">Copyright@ 40 Plus Company, LLC, 2024</div>
       <div className="icon-row">
-        <Twitter />
+        <Twitter size={props.isMobile ? "16px" : undefined} />
         <img alt="" src="/ins.png" />
         <img alt="" src="/facebook.png" />
       </div>
@@ -923,7 +1137,7 @@ function App() {
       <Contact isMobile={isMobile} setTab={setTab} />
 
       <div style={{ height: "20px" }} />
-      <Footer />
+      <Footer isMobile={isMobile} />
     </div>
   );
 }

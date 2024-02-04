@@ -1,7 +1,7 @@
-export const Softener = () => (
+export const Softener = (props: { width?: string; height?: string }) => (
   <svg
-    width="98"
-    height="73"
+    width={props.width || "98"}
+    height={props.height || "73"}
     viewBox="0 0 98 73"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -13,10 +13,10 @@ export const Softener = () => (
   </svg>
 );
 
-export const Purifier = () => (
+export const Purifier = (props: { width?: string; height?: string }) => (
   <svg
-    width="64"
-    height="87"
+    width={props.width || "64"}
+    height={props.height || "87"}
     viewBox="0 0 64 87"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +28,10 @@ export const Purifier = () => (
   </svg>
 );
 
-export const Upgraded = () => (
+export const Upgraded = (props: { width?: string; height?: string }) => (
   <svg
-    width="78"
-    height="78"
+    width={props.width || "78"}
+    height={props.height || "78"}
     viewBox="0 0 78 78"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -43,10 +43,10 @@ export const Upgraded = () => (
   </svg>
 );
 
-export const Twitter = () => (
+export const Twitter = (props: { size?: string }) => (
   <svg
-    width="34"
-    height="34"
+    width={props.size || "34"}
+    height={props.size || "34"}
     viewBox="0 0 34 34"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
