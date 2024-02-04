@@ -588,25 +588,29 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   }, [inView]);
   const [members, setMembers] = useState([
     {
-      url: "https://static.cytelab.net/userpublic/64397e38edfde0aacb43c384/preset-cover-10672c7c-dde5-45da-beef-0c971b89d7cd-1705569722185",
+      // url: "https://static.cytelab.net/userpublic/64397e38edfde0aacb43c384/preset-cover-10672c7c-dde5-45da-beef-0c971b89d7cd-1705569722185",
+      url: 'http://s8a186gmj.bkt.gdipper.com/Ken%20Tan.jpg',
       name: "Ken Tan",
       role: "Project Manager",
       desc: "Ken is an experienced professional contractor, he is working on remodeling , renovation, home improvements and ADU, like plumbing, electrical, roofing, drywall, painting, wood flooring,kitchen cabinets, carpentry and structural work.",
     },
     {
       name: "Bob Yao",
-      url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-653f76225fad7442a36d7ca7",
+      // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-653f76225fad7442a36d7ca7",
+      url: 'http://s8a186gmj.bkt.gdipper.com/Bob%20Yao.jpg',
       role: "Head of construction",
       desc: "Bob has 10+ years of operations and management experience, where he has directly managed an extensive variety of construction projects, hiring and negotiating with designers, architects, engineers, subcontractors and vendors.He is working on HVAC unit systems , plumbing, electrical, roofing and other maintenance projects.",
     },
     {
-      url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-656980faf18a16d57605c508-1701414188808",
+      // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-656980faf18a16d57605c508-1701414188808",
+      url: 'http://s8a186gmj.bkt.gdipper.com/Cindy%20Sun.jpg',
       name: "Cindy Sun",
       role: "Founder and CEO",
       desc: "As CEO, Cindy is a responsible for managing the strategies, direction and operations at 40Plus Home Improvement Group. Cindy is a licensed B General Contractor in California, as wellas in additional states. Cindy started her career in elevator industry, with a focus on the remodeling , and construction industry . She also is a licensed C-20 Heating, Ventilation, and AirConditioning contractor in California. She has Certificate of Mold Remediation and Certificate of Home Inspection. Over the past 6 years, Cindy has personally hired and trained over 50 employees, has accumulated expertise in general construction, renovation and development, and has personally overseen completion on over 500+ projects .",
     },
     {
-      url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
+      // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
+      url: 'http://s8a186gmj.bkt.gdipper.com/Hale%20Li.jpg',
       name: "Hale Li",
       role: "Director of Project Management",
       desc: "Hale has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Hale’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.",

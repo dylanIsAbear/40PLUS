@@ -240,6 +240,7 @@
 
 .member img {
   border-radius: 999px;
+  object-fit: cover;
 }
 
 .member1 {
