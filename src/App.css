@@ -82,7 +82,7 @@
 }
 
 .main-title {
-  font-size: 90px;
+  font-size: 56px;
 }
 
 .main-desc {
@@ -94,9 +94,9 @@
 .learn-btn {
   border: 2px solid #F25925;
   border-radius: 999px;
-  padding: 20px 80px;
-  font-size: 32px;
-  margin-top: 20px;
+  padding: 15px 50px;
+  font-size: 24px;
+  margin-top: 40px;
   cursor: pointer;
 }
 
@@ -119,14 +119,14 @@
 
 .about-title {
   color: white;
-  font-size: 64px;
+  font-size: 48px;
   font-family: "Podkova", serif;
   font-weight: 400;
 }
 
 .about-desc {
   color: black;
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Podkova", serif;
   font-weight: 400;
   margin-top: 20px;
@@ -161,7 +161,7 @@
 
 .service-title {
   font-family: "Oswald", sans-serif;
-  font-size: 72px;
+  font-size: 60px;
   z-index: 5;
 }
 
@@ -172,7 +172,7 @@
   background-color: white;
   /* align-items: center; */
   width: 20%;
-  padding: 30px 70px;
+  padding: 30px 20px;
   border-radius: 20px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
 }
@@ -200,7 +200,7 @@
 .flex-3 {
   z-index: 5;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-bottom: 40px;
   width: 100%;
   /* Optional: Adds space between grid items */
@@ -343,7 +343,7 @@
 
 .contact-detail {
   margin-top: 30px;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
   font-family: "Podkova", serif;
 }
@@ -362,13 +362,13 @@
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
   font-family: "Podkova", serif;
 }
 
 .contact-input::placeholder {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
   font-family: "Podkova", serif;
 }

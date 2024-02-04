@@ -13,13 +13,13 @@ code {
 }
 
 div::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 div {
   box-sizing: border-box;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
   display: flex;
 }
 

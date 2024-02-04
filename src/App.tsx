@@ -749,7 +749,7 @@ const Contact = (props: {
           <div className="contact-detail">Lisence Number: 1059175</div>
         </div>
       </div>
-      <div className="contact-title">Contact Form</div>
+      <div className="contact-title" style={{marginTop: '40px'}}>Contact Form</div>
       <div className="inputrow">
         <input className="contact-input" placeholder="First Name" />
         <input className="contact-input" placeholder="Last Name" />
