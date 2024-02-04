@@ -841,6 +841,9 @@ const Contact = (props: {
           </button>
         </form>
         {state.succeeded && <p>Thanks for contacting us!!</p>}
+        {state.errors && (
+          <p style={{ color: "red" }}>Please input email address</p>
+        )}
       </div>
     );
   }
@@ -932,6 +935,9 @@ const Contact = (props: {
         </button>
       </form>
       {state.succeeded && <p>Thanks for contacting us!!</p>}
+      {state.errors && (
+        <p style={{ color: "red" }}>Please input email address</p>
+      )}
     </div>
   );
 };
@@ -944,7 +950,6 @@ const Project = (props: {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const { isMobile } = props;
-
   useEffect(() => {
     if (inView) {
       controls.start("visible");
