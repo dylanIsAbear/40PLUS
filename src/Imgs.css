@@ -1,15 +1,48 @@
 .imglistli {
+    width: 25vw;
     aspect-ratio: 1;
+    overflow: hidden;
 }
 
 
-.imglistli img {
-    width: 25vw;
-    height: 100%;
-    aspect-ratio: 1;
+.imglistimg {
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
+}
+.imginfocontainer {
+    width: 100%;
+    height: 0;
+    line-height: 0;
+    overflow: visible;
+}
+.imginfo {
+    height: 4em;
+    width: 100%;
+    transform: translateY(0%);
+    transition: all 0.2s ease;
+    font-family: "Podkova", serif;
+    font-size: 24px;
+    line-height: 28px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.imginfo .bottom {
+    padding: 0.5em;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #2e2e2ecf;
+}
+
+.imglistli:hover .imginfo{
+    transform: translateY(-100%);
 }
 
 .imglistconstrain {
@@ -47,10 +80,10 @@
 }
 
 .forward {
-    transform: translateX(-50vw);
+    /* transform: translateX(50vw); */
 }
 .backward {
-    transform: translateX(50vw);
+    /* transform: translateX(-50vw); */
 }
 
 .forward > .imglistfakep{
