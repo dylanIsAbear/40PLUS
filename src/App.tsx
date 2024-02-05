@@ -350,13 +350,13 @@ const About = (props: { isMobile?: boolean }) => {
 const Services = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   const { setTab, isMobile } = props;
   const services = [
-    'ADU\n(ACCESSORY DWELLING UNITS)',
-    'Commercial tenant improvements',
-    'Retrofitting & Structural',
-    'Mechanical, Plumbing, Electrical ,Roofing',
-    'Mold Remediation (Certificate of California State)',
-    'Air testing',
-    'HVAC maintenance (heating,ventilation and air conditioning)',
+    'Roofing',
+    'HVAC (heating. Ventilation & Air Conditioning)',
+    'Remodeling & Structural',
+    'Plumbing / Electrical',
+    'Mold Remediation& Air Testing',
+    'ADU(Accessory dwelling units',
+    'Commercial Tenant Improvements',
     'Home Inspection',
   ];
 
@@ -560,7 +560,7 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
   const [members, setMembers] = useState([
     {
       // url: "https://static.cytelab.net/userpublic/64397e38edfde0aacb43c384/preset-cover-10672c7c-dde5-45da-beef-0c971b89d7cd-1705569722185",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Ken%20Tan.jpg',
+      url: 'http://img.40plushome.com/Ken%20Tan.jpg',
       name: 'Ken Tan',
       role: 'Project Manager',
       desc: 'Ken is an experienced professional contractor, he is working on remodeling , renovation, home improvements and ADU, like plumbing, electrical, roofing, drywall, painting, wood flooring,kitchen cabinets, carpentry and structural work.',
@@ -568,20 +568,20 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
     {
       name: 'Bob Yao',
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-653f76225fad7442a36d7ca7",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Bob%20Yao.jpg',
+      url: 'http://img.40plushome.com/Bob%20Yao.jpg',
       role: 'Head of construction',
       desc: 'Bob has 10+ years of operations and management experience, where he has directly managed an extensive variety of construction projects, hiring and negotiating with designers, architects, engineers, subcontractors and vendors.He is working on HVAC unit systems , plumbing, electrical, roofing and other maintenance projects.',
     },
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-656980faf18a16d57605c508-1701414188808",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Cindy%20Sun.jpg',
+      url: 'http://img.40plushome.com/Cindy%20Sun.jpg',
       name: 'Cindy Sun',
       role: 'Founder and CEO',
       desc: 'As CEO, Cindy is a responsible for managing the strategies, direction and operations at 40Plus Home Improvement Group. Cindy is a licensed B General Contractor in California, as wellas in additional states. Cindy started her career in elevator industry, with a focus on the remodeling , and construction industry . She also is a licensed C-20 Heating, Ventilation, and AirConditioning contractor in California. She has Certificate of Mold Remediation and Certificate of Home Inspection. Over the past 6 years, Cindy has personally hired and trained over 50 employees, has accumulated expertise in general construction, renovation and development, and has personally overseen completion on over 500+ projects .',
     },
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
-      url: 'http://s8a186gmj.bkt.gdipper.com/Hale%20Li.jpg',
+      url: 'http://img.40plushome.com/Hale%20Li.jpg',
       name: 'Hale Li',
       role: 'Director of Project Management',
       desc: 'Hale has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Hale’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.',
@@ -855,74 +855,74 @@ const Contact = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => 
 const ImgsF = [
   {
     name: 'Asphalt shingles at Monterey Park city reroofing',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png',
+    src: 'http://img.40plushome.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png',
   },
   {
     name: 'Asphalt shingles reroofing at Rowland Heights',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
+    src: 'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
   },
   {
     name: 'Goodman HVAC units at San Gabriel city instillation',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
+    src: 'http://img.40plushome.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
   },
   {
     name: 'HVAC',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC/1.png',
+    src: 'http://img.40plushome.com/projects/HVAC/1.png',
   },
   {
     name: 'HVAC at Garden Grove city Replacement',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png',
+    src: 'http://img.40plushome.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png',
   },
   {
     name: 'HVAC units at Garden Grove city troubleshooting',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png',
+    src: 'http://img.40plushome.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png',
   },
   {
     name: 'House ADU',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/House%20ADU/1.png',
+    src: 'http://img.40plushome.com/projects/House%20ADU/1.png',
   },
   {
     name: 'Kitchen Remodeling',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Kitchen%20Remodeling/1.png',
+    src: 'http://img.40plushome.com/projects/Kitchen%20Remodeling/1.png',
   },
   {
     name: 'Midea HVAC units at Chino Hills city installation',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png',
+    src: 'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png',
   },
 ];
 
 const ImgsR = [
   {
     name: 'Mold Remediation at Newport Coast city service',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png',
+    src: 'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png',
   },
   {
     name: 'Roofing project',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Roofing%20project/1.png',
+    src: 'http://img.40plushome.com/projects/Roofing%20project/1.png',
   },
   {
     name: 'Water softener system projects',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Water%20softener%20system%20projects/1.png',
+    src: 'http://img.40plushome.com/projects/Water%20softener%20system%20projects/1.png',
   },
   {
     name: 'asphalt shingles reroofing at West Covina city',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png',
+    src: 'http://img.40plushome.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png',
   },
   {
     name: 'commercial history building projects',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/commercial%20history%20building%20projects/0.1.png',
+    src: 'http://img.40plushome.com/projects/commercial%20history%20building%20projects/0.1.png',
   },
   {
     name: 'residential roofing tiles at Azusa city installation',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png',
+    src: 'http://img.40plushome.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png',
   },
   {
     name: 'roof',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/roof/1.png',
+    src: 'http://img.40plushome.com/projects/roof/1.png',
   },
   {
     name: 'roofing project 2',
-    src: 'http://s8a186gmj.bkt.gdipper.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png',
+    src: 'http://img.40plushome.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png',
   },
 ];
 
@@ -970,8 +970,8 @@ const Project = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => 
           className='project-row'
         >
           <div className='projects-split'>
-            <Imgs imgsrc={ImgsF} />
-            <Imgs imgsrc={ImgsR} backward />
+            <Imgs noHover={isMobile} imgsrc={ImgsF} />
+            <Imgs noHover={isMobile} imgsrc={ImgsR} backward />
           </div>
         </motion.div>
         <motion.div
@@ -1025,8 +1025,8 @@ const Project = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => 
         className='project-row'
       >
         <div className='projects-split'>
-          <Imgs imgsrc={ImgsF} />
-          <Imgs imgsrc={ImgsR} backward />
+          <Imgs noHover={isMobile} imgsrc={ImgsF} />
+          <Imgs noHover={isMobile} imgsrc={ImgsR} backward />
         </div>
       </motion.div>
       <motion.div
@@ -1056,126 +1056,126 @@ const AllProjects = (props: { isMobile?: boolean }) => {
     {
       name: 'Asphalt shingles at Monterey Park city reroofing',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/2.png',
+        'http://img.40plushome.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png',
+        'http://img.40plushome.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/2.png',
       ],
     },
     {
       name: 'Asphalt shingles reroofing at Rowland Heights',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/3.png',
-        // 'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/4.png'
+        'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
+        'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/2.png',
+        'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/3.png',
+        // 'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/4.png'
       ],
     },
     {
       name: 'Goodman HVAC units at San Gabriel city instillation',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
+        'http://img.40plushome.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
       ],
     },
     {
       name: 'HVAC',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC/3.png',
+        'http://img.40plushome.com/projects/HVAC/1.png',
+        'http://img.40plushome.com/projects/HVAC/2.png',
+        'http://img.40plushome.com/projects/HVAC/3.png',
       ],
     },
     {
       name: 'HVAC at Garden Grove city Replacement',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/2.png',
+        'http://img.40plushome.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png',
+        'http://img.40plushome.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/2.png',
       ],
     },
     {
       name: 'HVAC units at Garden Grove city troubleshooting',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png',
+        'http://img.40plushome.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png',
       ],
     },
     {
       name: 'House ADU',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/House%20ADU/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/House%20ADU/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/House%20ADU/3.png',
+        'http://img.40plushome.com/projects/House%20ADU/1.png',
+        'http://img.40plushome.com/projects/House%20ADU/2.png',
+        'http://img.40plushome.com/projects/House%20ADU/3.png',
       ],
     },
     {
       name: 'Kitchen Remodeling',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Kitchen%20Remodeling/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Kitchen%20Remodeling/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Kitchen%20Remodeling/3.png',
+        'http://img.40plushome.com/projects/Kitchen%20Remodeling/1.png',
+        'http://img.40plushome.com/projects/Kitchen%20Remodeling/2.png',
+        'http://img.40plushome.com/projects/Kitchen%20Remodeling/3.png',
       ],
     },
     {
       name: 'Midea HVAC units at Chino Hills city installation',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/3.png',
+        'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png',
+        'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/2.png',
+        'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/3.png',
       ],
     },
     {
       name: 'Mold Remediation at Newport Coast city service',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/3.png',
+        'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png',
+        'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/2.png',
+        'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/3.png',
       ],
     },
     {
       name: 'Roofing project',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Roofing%20project/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Roofing%20project/2.png',
+        'http://img.40plushome.com/projects/Roofing%20project/1.png',
+        'http://img.40plushome.com/projects/Roofing%20project/2.png',
       ],
     },
     {
       name: 'Water softener system projects',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/Water%20softener%20system%20projects/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/Water%20softener%20system%20projects/2.png',
+        'http://img.40plushome.com/projects/Water%20softener%20system%20projects/1.png',
+        'http://img.40plushome.com/projects/Water%20softener%20system%20projects/2.png',
       ],
     },
     {
       name: 'asphalt shingles reroofing at West Covina city',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png',
+        'http://img.40plushome.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png',
       ],
     },
     {
       name: 'commercial history building projects',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/commercial%20history%20building%20projects/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/commercial%20history%20building%20projects/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/commercial%20history%20building%20projects/3.png',
+        'http://img.40plushome.com/projects/commercial%20history%20building%20projects/1.png',
+        'http://img.40plushome.com/projects/commercial%20history%20building%20projects/2.png',
+        'http://img.40plushome.com/projects/commercial%20history%20building%20projects/3.png',
       ],
     },
     {
       name: 'residential roofing tiles at Azusa city installation',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/2.png',
+        'http://img.40plushome.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png',
+        'http://img.40plushome.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/2.png',
       ],
     },
     {
       name: 'roof',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/roof/1.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/roof/2.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/roof/3.png',
+        'http://img.40plushome.com/projects/roof/1.png',
+        'http://img.40plushome.com/projects/roof/2.png',
+        'http://img.40plushome.com/projects/roof/3.png',
       ],
     },
     {
       name: 'roofing project 2',
       links: [
-        'http://s8a186gmj.bkt.gdipper.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png',
-        'http://s8a186gmj.bkt.gdipper.com/projects/roofing%20project%202/f0d52230c7f319421ec645f76e408a5.png',
+        'http://img.40plushome.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png',
+        'http://img.40plushome.com/projects/roofing%20project%202/f0d52230c7f319421ec645f76e408a5.png',
       ],
     },
   ];
