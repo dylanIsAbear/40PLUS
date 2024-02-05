@@ -582,7 +582,7 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
       url: 'http://img.40plushome.com/Hale%20Li.jpg',
-      name: 'Hale Li',
+      name: 'Brown Li',
       role: 'Director of Project Management',
       desc: 'Hale has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Hale’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.',
     },
@@ -592,7 +592,8 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
     return (
       <div className='mobileteam'>
         <div className='service-title'>OUR TEAM</div>
-        {members.map((member) => {
+        {[2,1,3,0].map((i) => {
+          const member = members[i];
           return (
             <div className='m-member'>
               <img alt='' src={member.url} />
