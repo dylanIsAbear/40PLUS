@@ -13,7 +13,12 @@ export const Img = (props: { name: string, src: string }) => {
     const { name, src } = props
     return (
         <li className="imglistli">
-            <img src={src} alt="" />
+            <img src={src} alt="" className="imglistimg" />
+            <div className="imginfocontainer">
+                <div className="imginfo">
+                    <div className="bottom">{name}</div>
+                </div>
+            </div>
         </li>
     )
 }
