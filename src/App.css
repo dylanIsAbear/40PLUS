@@ -330,7 +330,8 @@
 }
 
 .contact-title {
-  color: #F25925;
+  /* color: #F25925; */
+  color: white;
   font-size: 42px;
   font-family: "Podkova", serif;
 }
