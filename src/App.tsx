@@ -20,6 +20,12 @@ const Menu = (props: { onChangeTab: (tab: Tabs) => void; tab: Tabs; isMobile?: b
   const [collapse, setCollapse] = useState(true);
 
   useEffect(() => {
+    if (props.isMobile) {
+      setCollapse(true);
+    }
+  }, [props.isMobile, tab]);
+
+  useEffect(() => {
     if (!props.isMobile) {
       window.addEventListener('wheel', (e) => {
         if (e.deltaY > 0) {
@@ -1181,7 +1187,7 @@ const AllProjects = (props: { isMobile?: boolean }) => {
         return (
           <div className='apblock' key={i}>
             <div className='aptitle'>{project.name}</div>
-            <div className='flex-3' style={{gap: '5px'}}>
+            <div className='flex-3' style={{ gap: '5px' }}>
               {project.links.map((link) => (
                 <img alt='' src={link} key={link}></img>
               ))}
