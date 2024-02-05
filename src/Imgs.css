@@ -1,0 +1,75 @@
+.imglistli {
+    aspect-ratio: 1;
+}
+
+
+.imglistli img {
+    width: 25vw;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.imglistconstrain {
+    width: 100vw;
+    display: flex;
+    overflow: scroll;
+    position: relative;
+    line-height: 0;
+}
+
+
+.imglistcontainer {
+    display: flex;
+    list-style: none;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    padding-inline-start: unset;
+    animation: f 45s linear;
+    animation-iteration-count: infinite;
+}
+
+#projects {
+    padding: 40px 0;
+}
+
+@keyframes f {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.forward {
+    transform: translateX(-50vw);
+}
+.backward {
+    transform: translateX(50vw);
+}
+
+.forward > .imglistfakep{
+    animation-direction: normal
+}
+
+.forward > .imglistfakem{
+    animation-direction: normal
+}
+.forward > .imglistfakel{
+    animation-direction: normal
+}
+
+.backward > .imglistfakep {
+    animation-direction: reverse
+}
+.backward > .imglistfakem {
+    animation-direction: reverse
+}
+.backward > .imglistfakel {
+    animation-direction: reverse
+}

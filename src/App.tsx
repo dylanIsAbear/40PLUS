@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import "./App.css";
 import cx from "classnames";
@@ -7,6 +8,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 
 import { useInView } from "react-intersection-observer";
+import Imgs from "./Imgs";
 
 type Tabs = "home" | "services" | "projects" | "team" | "contact";
 
@@ -942,6 +944,78 @@ const Contact = (props: {
   );
 };
 
+const ImgsF = [
+  {
+    name: 'Asphalt shingles at Monterey Park city reroofing',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png'
+  },
+  {
+    name: 'Asphalt shingles reroofing at Rowland Heights',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png'
+  },
+  {
+    name: 'Goodman HVAC units at San Gabriel city instillation',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png'
+  },
+  {
+    name: 'HVAC',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC/1.png'
+  },
+  {
+    name: 'HVAC at Garden Grove city Replacement',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png'
+  },
+  {
+    name: 'HVAC units at Garden Grove city troubleshooting',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png'
+  },
+  {
+    name: 'House ADU',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/House%20ADU/1.png'
+  },
+  {
+    name: 'Kitchen Remodeling',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Kitchen%20Remodeling/1.png'
+  },
+  {
+    name: 'Midea HVAC units at Chino Hills city installation',
+    src: 'http://s8a186gmj.bkt.gdipper.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png'
+  }
+]
+
+const ImgsR = [{
+  name: 'Mold Remediation at Newport Coast city service',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png'
+},
+{
+  name: 'Roofing project',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/Roofing%20project/1.png'
+},
+{
+  name: 'Water softener system projects',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/Water%20softener%20system%20projects/1.png'
+},
+{
+  name: 'asphalt shingles reroofing at West Covina city',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png'
+},
+{
+  name: 'commercial history building projects',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/commercial%20history%20building%20projects/0.1.png'
+},
+{
+  name: 'residential roofing tiles at Azusa city installation',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png'
+},
+{
+  name: 'roof',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/roof/1.png'
+},
+{
+  name: 'roofing project 2',
+  src: 'http://s8a186gmj.bkt.gdipper.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png'
+}]
+
 const Project = (props: {
   setTab: (tab: Tabs) => void;
   isMobile?: boolean;
@@ -989,9 +1063,10 @@ const Project = (props: {
           }}
           className="project-row"
         >
-          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/0.1.png" />
-          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/1.png" />
-          <img alt="" src="http://s8a186gmj.bkt.gdipper.com/2.png" />
+          <div className="projects-split">
+            <Imgs imgsrc={ImgsF} />
+            <Imgs imgsrc={ImgsR} backward />
+          </div>
         </motion.div>
         <motion.div
           initial="hidden"
@@ -1043,9 +1118,10 @@ const Project = (props: {
         }}
         className="project-row"
       >
-        <img alt="" src="http://s8a186gmj.bkt.gdipper.com/0.1.png" />
-        <img alt="" src="http://s8a186gmj.bkt.gdipper.com/1.png" />
-        <img alt="" src="http://s8a186gmj.bkt.gdipper.com/2.png" />
+        <div className="projects-split">
+          <Imgs imgsrc={ImgsF} />
+          <Imgs imgsrc={ImgsR} backward />
+        </div>
       </motion.div>
       <motion.div
         initial="hidden"
