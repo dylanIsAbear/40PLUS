@@ -6,18 +6,20 @@ import cx from 'classnames'
 interface IImgs extends React.HTMLProps<HTMLDivElement> {
     imgsrc: { name: string, src: string }[]
     backward?: boolean
+    noHover?: boolean
 }
 
 
-export const Img = (props: { name: string, src: string }) => {
-    const { name, src } = props
+export const Img = (props: { name: string, src: string, noHover: boolean }) => {
+    const { name, src, noHover } = props
     return (
         <li className="imglistli">
             <img src={src} alt="" className="imglistimg" />
             <div className="imginfocontainer">
-                <div className="imginfo">
-                    <div className="bottom">{name}</div>
-                </div>
+                {noHover ? null :
+                    <div className="imginfo">
+                        <div className="bottom">{name}</div>
+                    </div>}
             </div>
         </li>
     )
@@ -25,23 +27,23 @@ export const Img = (props: { name: string, src: string }) => {
 
 
 const Imgs: React.FC<IImgs> = (_props) => {
-    const { imgsrc, backward = false } = _props
+    const { imgsrc, backward = false, noHover } = _props
     return (
         <div className="imglistconstrain">
             <div className={cx("imglistoffset", backward ? "backward" : "forward")}>
                 <ul className={cx("imglistcontainer", "imglistfakep")}>
                     {imgsrc.map((ims, index) => {
-                        return <Img key={index} {...ims} />
+                        return <Img key={index} {...ims} noHover={noHover} />
                     })}
                 </ul>
                 <ul className={cx("imglistcontainer", "imglistfakem")}>
                     {imgsrc.map((ims, index) => {
-                        return <Img key={index} {...ims} />
+                        return <Img key={index} {...ims} noHover={noHover} />
                     })}
                 </ul>
                 <ul className={cx("imglistcontainer", "imglistfakel")}>
                     {imgsrc.map((ims, index) => {
-                        return <Img key={index} {...ims} />
+                        return <Img key={index} {...ims} noHover={noHover} />
                     })}
                 </ul>
             </div>
