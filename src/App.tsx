@@ -161,7 +161,7 @@ const Home = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
             top: 0,
           }}
           alt=''
-          src='/bg.png'
+          src='/home.jpg'
         />
         <div className='grayfilter' style={{ width: '100%', height: '100vh' }}></div>
         <motion.div
@@ -201,12 +201,13 @@ const Home = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
           width: '100%',
           height: '100vh',
           position: 'absolute',
+          objectFit: 'cover',
           left: 0,
           zIndex: 0,
           top: 0,
         }}
         alt=''
-        src='/bg.png'
+        src='/home.jpg'
       />
       <div className='grayfilter' style={{ width: '100%', height: '100vh' }}></div>
       <motion.div
@@ -288,7 +289,7 @@ const About = (props: { isMobile?: boolean }) => {
           }}
           className='about-right'
         >
-          <img style={{ width: '100%', borderRadius: '8px' }} alt='' src='/about1.png' />
+          <img style={{ width: '100%', borderRadius: '8px' }} alt='' src='/office.jpg' />
           <div className='about-bg-desc'>
             LOS ANGELES <br /> BUILDERS
           </div>
@@ -338,7 +339,8 @@ const About = (props: { isMobile?: boolean }) => {
         }}
         className='about-right'
       >
-        <img style={{ width: '100%', borderRadius: '8px' }} alt='' src='/about1.png' />
+        <img style={{ width: '100%', borderRadius: '8px' }} alt='' src='/office.jpg
+        ' />
         <div className='about-bg-desc'>
           LOS ANGELES <br /> BUILDERS
         </div>
@@ -355,7 +357,7 @@ const Services = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) =>
     'Remodeling & Structural',
     'Plumbing / Electrical',
     'Mold Remediation& Air Testing',
-    'ADU(Accessory dwelling units',
+    'ADU(Accessory dwelling units)',
     'Commercial Tenant Improvements',
     'Home Inspection',
   ];
@@ -577,14 +579,14 @@ const Team = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => {
       url: 'http://img.40plushome.com/Cindy%20Sun.jpg',
       name: 'Cindy Sun',
       role: 'Founder and CEO',
-      desc: 'As CEO, Cindy is a responsible for managing the strategies, direction and operations at 40Plus Home Improvement Group. Cindy is a licensed B General Contractor in California, as wellas in additional states. Cindy started her career in elevator industry, with a focus on the remodeling , and construction industry . She also is a licensed C-20 Heating, Ventilation, and AirConditioning contractor in California. She has Certificate of Mold Remediation and Certificate of Home Inspection. Over the past 6 years, Cindy has personally hired and trained over 50 employees, has accumulated expertise in general construction, renovation and development, and has personally overseen completion on over 500+ projects .',
+      desc: 'As CEO, Cindy is a responsible for managing the strategies, direction and operations at 40Plus Home Improvement Group. Cindy is a licensed B General Contractor in California, as well as in additional states. Cindy started her career in elevator industry, with a focus on the remodeling , and construction industry . She also is a licensed C-20 Heating, Ventilation, and Air Conditioning contractor in California. She has Certificate of Mold Remediation and Certificate of Home Inspection. Over the past 6 years, Cindy has personally hired and trained over 50 employees, has accumulated expertise in general construction, renovation and development, and has personally overseen completion on over 500+ projects .',
     },
     {
       // url: "https://static.cytelab.net/userpublic/650154a8f54b94e587232eb8/preset-cover-65a9f107e466989194a688df-1705636103798",
       url: 'http://img.40plushome.com/Hale%20Li.jpg',
       name: 'Brown Li',
       role: 'Director of Project Management',
-      desc: 'Hale has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Hale’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.',
+      desc: 'Brown has been working on roof construction at a very large scale for 8+ years. He has personally overseen and managed many construction projects, he oversees all cost control, budget and project management. Many in Brown’s network have praised his ability to execute and solve complex problems. he is working on remodeling , renovation, home improvements, like roofing, plumbing, electrical, roofing, concrete, kitchen cabinets, carpentry and structural work.',
     },
   ]);
 
@@ -1055,14 +1057,14 @@ const AllProjects = (props: { isMobile?: boolean }) => {
 
   const imgs = [
     {
-      name: 'Asphalt shingles at Monterey Park city reroofing',
+      name: 'Asphalt Shingles at Monterey Park City Reroofing',
       links: [
         'http://img.40plushome.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/1.png',
         'http://img.40plushome.com/projects/Asphalt%20shingles%20at%20Monterey%20Park%20city%20reroofing/2.png',
       ],
     },
     {
-      name: 'Asphalt shingles reroofing at Rowland Heights',
+      name: 'Asphalt shingles Reroofing at Rowland Heights',
       links: [
         'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
         'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/2.png',
@@ -1071,7 +1073,7 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'Goodman HVAC units at San Gabriel city instillation',
+      name: 'Goodman HVAC Units at San Gabriel City Instillation',
       links: [
         'http://img.40plushome.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
       ],
@@ -1085,14 +1087,14 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'HVAC at Garden Grove city Replacement',
+      name: 'HVAC at Garden Grove City Replacement',
       links: [
         'http://img.40plushome.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/1.png',
         'http://img.40plushome.com/projects/HVAC%20at%20Garden%20Grove%20city%20Replacement/2.png',
       ],
     },
     {
-      name: 'HVAC units at Garden Grove city troubleshooting',
+      name: 'HVAC Units at Garden Grove City Troubleshooting',
       links: [
         'http://img.40plushome.com/projects/HVAC%20units%20at%20Garden%20Grove%20city%20troubleshooting/8b2b0513192bb55126e87af4485da6d.png',
       ],
@@ -1114,7 +1116,7 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'Midea HVAC units at Chino Hills city installation',
+      name: 'Midea HVAC Units at Chino Hills City Installation',
       links: [
         'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/1.png',
         'http://img.40plushome.com/projects/Midea%20HVAC%20units%20at%20Chino%20Hills%20city%20installation/2.png',
@@ -1122,7 +1124,7 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'Mold Remediation at Newport Coast city service',
+      name: 'Mold Remediation at Newport Coast City Service',
       links: [
         'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/1.png',
         'http://img.40plushome.com/projects/Mold%20Remediation%20at%20Newport%20Coast%20city%20service/2.png',
@@ -1130,27 +1132,27 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'Roofing project',
+      name: 'Roofing Project',
       links: [
         'http://img.40plushome.com/projects/Roofing%20project/1.png',
         'http://img.40plushome.com/projects/Roofing%20project/2.png',
       ],
     },
     {
-      name: 'Water softener system projects',
+      name: 'Water Softener System Projects',
       links: [
         'http://img.40plushome.com/projects/Water%20softener%20system%20projects/1.png',
         'http://img.40plushome.com/projects/Water%20softener%20system%20projects/2.png',
       ],
     },
     {
-      name: 'asphalt shingles reroofing at West Covina city',
+      name: 'Asphalt Shingles Reroofing at West Covina City',
       links: [
         'http://img.40plushome.com/projects/asphalt%20shingles%20reroofing%20at%20West%20Covina%20city/9fd26ba6bf0d2a87e7a7fa80fb5c633.png',
       ],
     },
     {
-      name: 'commercial history building projects',
+      name: 'Commercial History Building Projects',
       links: [
         'http://img.40plushome.com/projects/commercial%20history%20building%20projects/1.png',
         'http://img.40plushome.com/projects/commercial%20history%20building%20projects/2.png',
@@ -1158,14 +1160,14 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'residential roofing tiles at Azusa city installation',
+      name: 'Residential Roofing Tiles at Azusa City Installation',
       links: [
         'http://img.40plushome.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/1.png',
         'http://img.40plushome.com/projects/residential%20roofing%20tiles%20at%20Azusa%20city%20%C2%A0installation/2.png',
       ],
     },
     {
-      name: 'roof',
+      name: 'Roof',
       links: [
         'http://img.40plushome.com/projects/roof/1.png',
         'http://img.40plushome.com/projects/roof/2.png',
@@ -1173,7 +1175,7 @@ const AllProjects = (props: { isMobile?: boolean }) => {
       ],
     },
     {
-      name: 'roofing project 2',
+      name: 'Roofing Project 2',
       links: [
         'http://img.40plushome.com/projects/roofing%20project%202/1280a895922df4abf80eb87307c1761.png',
         'http://img.40plushome.com/projects/roofing%20project%202/f0d52230c7f319421ec645f76e408a5.png',
