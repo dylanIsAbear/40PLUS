@@ -353,7 +353,7 @@ const Services = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) =>
   const { setTab, isMobile } = props;
   const services = [
     'Roofing',
-    'HVAC (heating. Ventilation & Air Conditioning)',
+    'HVAC (Heating. Ventilation & Air Conditioning)',
     'Remodeling & Structural',
     'Plumbing / Electrical',
     'Mold Remediation& Air Testing',
