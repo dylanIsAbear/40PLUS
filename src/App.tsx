@@ -452,7 +452,7 @@ const Services = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) =>
         <div style={{ marginLeft: '7.5%' }} className='service-item'>
           <div className='service-name'>{7}</div>
           <div className='service-desc'>
-            {'HVAC maintenance (heating,ventilation and air conditioning)'}
+            {'Commercial Tenant Improvements'}
           </div>
         </div>
         <div style={{ marginRight: '7.5%' }} className='service-item'>
