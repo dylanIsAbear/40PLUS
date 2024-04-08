@@ -735,7 +735,7 @@ const Contact = (props: { setTab: (tab: Tabs) => void; isMobile?: boolean }) => 
         <div className='contact-part'>
           <div className='contact-title'>Contact Details</div>
           <div className='contact-detail'>Phone: 626-525-1861</div>
-          <div className='contact-detail'>Email adress: 40plushomeimprovement@gmail.com</div>
+          <div className='contact-detail'>Email address: 40plushomeimprovement@gmail.com</div>
           <div className='contact-detail'>Address: Los Angeles, California</div>
           <div className='contact-detail'>License Number: 1059175</div>
         </div>
