@@ -865,7 +865,7 @@ const ImgsF = [
     src: 'http://img.40plushome.com/projects/Asphalt%20shingles%20reroofing%20at%20Rowland%20Heights/1.png',
   },
   {
-    name: 'Goodman HVAC units at San Gabriel city instillation',
+    name: 'Goodman HVAC units at San Gabriel city installation',
     src: 'http://img.40plushome.com/projects/Goodman%20HVAC%20units%20at%20San%20Gabriel%20city%20instillation/afeee23526bf16c3dc7cf36d35689c5.png',
   },
   {
